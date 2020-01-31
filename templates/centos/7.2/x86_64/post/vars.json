@@ -1,0 +1,14 @@
+{
+  "pe_tarball_url"           : "https://artifactory.delivery.puppetlabs.net/artifactory/generic_enterprise__local/master/ci-ready",
+  "platform"                 : "el-7-x86_64",
+  "pe_version"               : "",
+  "backup_db_url"            : "http://slv-performance-results.s3-website-us-west-2.amazonaws.com/releases/Kearney/SLV-415/kearney_soak/master",
+  "backup_tar"               : "db_backup.2019.05.29.tar.gz",
+  "post_provisioning_scripts": [
+    "{{user `project_root`}}/scripts/cleanup-aio.sh",
+    "{{user `project_root`}}/scripts/post/pdb-preload/pe_install.sh",
+    "{{user `project_root`}}/scripts/post/pdb-preload/load_backup_db.sh",
+    "{{user `project_root`}}/scripts/cleanup-packer.sh"
+  ],
+  "post_provisioning_scripts_valid_exit_codes": [0]
+}
