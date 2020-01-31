@@ -40,11 +40,8 @@
     "ssh_username"                                 : "root",
     "ssh_password"                                 : "puppet",
     "vmware_base_provisioning_scripts"             : "../../../../scripts/bootstrap-aio.sh",
-    "post_provisioning_scripts"                    : [
-      "{{user `project_root`}}/scripts/cleanup-aio.sh",
-      "{{user `project_root`}}/scripts/cleanup-packer.sh"
-    ],
-    "post_provisioning_scripts_valid_exit_codes"   : [0],
+    "post_provisioning_scripts"                    : "{{user `project_root`}}/scripts/cleanup-aio.sh,{{user `project_root`}}/scripts/cleanup-packer.sh",
+    "post_provisioning_scripts_valid_exit_codes"   : "0",
 
     "tools_upload_flavor"                          : "linux"
   },
